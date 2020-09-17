@@ -3,11 +3,30 @@ html, body, #root, #root>div {
     margin: 0;
 }
 
+.passage, .verse-title, .random-verse-button {
+    padding: 5px;
+}
+
 .app {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
+.verse-card {
+    font-weight: bold;
+    font-size: 30px;
+    padding: 50px;
+}
+
+.verse-title {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.random-verse-button {
+    padding: 0.5em;
+}
