@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
+import "../css/index.css";
 
 const Verse = props => {
     const [passage, setPassage] = useState([]);
