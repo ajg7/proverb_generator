@@ -6,6 +6,7 @@ const Verse = props => {
     const [verse, setVerse] = useState([]);
     const [translation, setTranslation] = useState("");
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
 
 
     const clickHandler = () => {
@@ -22,6 +23,7 @@ const Verse = props => {
             })
             .catch(error => {
                 console.log(error)
+                setError(true);
             })
     }
 
@@ -32,6 +34,7 @@ const Verse = props => {
     return(
         <div className="generator">
             {loading ? <div>Loading Verse....</div> : null}
+            {error ? <div>This server lacks wisdom...</div> : null}
             <div className="verse-card">
                 <h2>{passage}</h2>
                 <h2>{verse} {translation}</h2>
