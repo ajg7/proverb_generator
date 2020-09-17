@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
-import "../css/index.css";
 
 const Verse = props => {
     const [passage, setPassage] = useState([]);
@@ -25,6 +24,7 @@ const Verse = props => {
             .catch(error => {
                 console.log(error)
                 setError(true);
+                setLoading(false);
             })
     }
 
@@ -33,17 +33,21 @@ const Verse = props => {
     }, [])
 
     return(
-        <div className="generator">
-            {loading ? <div>Loading Verse....</div> : null}
-            {error ? <div>This server lacks wisdom...</div> : null}
+        <>
+            {loading ? <div className="loading-message">Loading Verse....</div> : null}
+            {error ? <div className="error-message">This fetch lacks the wisdom of Solomon...</div> : null}
             <div className="verse-card">
-                <h2>{passage}</h2>
-                <h2>{verse} {translation}</h2>
+                <div className="passage">
+                    <h2>{passage}</h2>
+                </div>
+                <div className="verse-title">
+                    <h2>{verse} {translation}</h2>
+                </div>
+                <div className="random-verse-button">
+                    <button onClick={clickHandler}>Random Verse!</button>
+                </div>
             </div>
-            <div className="random-verse-button">
-                <button onClick={clickHandler}>Random Verse!</button>
-            </div>
-        </div>
+        </>
     )
 }
 
