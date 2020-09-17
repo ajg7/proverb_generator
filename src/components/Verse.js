@@ -5,6 +5,7 @@ const Verse = props => {
     const [passage, setPassage] = useState([]);
     const [verse, setVerse] = useState([]);
     const [translation, setTranslation] = useState("");
+    const [loading, setLoading] = useState(true);
 
 
     const clickHandler = () => {
@@ -14,10 +15,10 @@ const Verse = props => {
         axiosWithAuth().get(`v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
             .then(response => {
                 console.log(response.data)
-                const passage = response.data.passages;
-                setPassage(passage);
+                setPassage(response.data.passages);
                 setVerse(response.data.query);
                 setTranslation("ESV");
+                setLoading(false);
             })
             .catch(error => {
                 console.log(error)
@@ -27,9 +28,10 @@ const Verse = props => {
     useEffect(() => {
         clickHandler()
     }, [])
-    
+
     return(
         <div className="generator">
+            {loading ? <div>Loading Verse....</div> : null}
             <div className="verse-card">
                 <h2>{passage}</h2>
                 <h2>{verse} {translation}</h2>
