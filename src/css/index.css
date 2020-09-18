@@ -31,7 +31,11 @@ html, body, #root, #root>div {
     padding: 0.5em;
 }
 
-.random-verse-button button {
+button {
     background: none;
     padding: 0.5em 3em;
+}
+
+button:hover {
+    opacity: 0.7;
 }
