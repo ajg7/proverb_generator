@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap');
+
 :root {
     --primary-color: #9470CE;
     --secondary-color: #EFCF20;
+    --my-font: "Grandstander", cursive;
 }
 
 
@@ -12,6 +15,7 @@ html, body, #root, #root>div {
 body {
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    font-family: var(--my-font);
 }
 
 .passage, .verse-title, .random-verse-button {
@@ -47,6 +51,8 @@ button {
     padding: 0.5em 3em;
     border: 5px solid var(--secondary-color);
     color: var(--secondary-color);
+    font-weight: bold;
+    font-family: var(--my-font);
 }
 
 button:hover {
