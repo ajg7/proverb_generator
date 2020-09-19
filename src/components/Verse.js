@@ -6,7 +6,7 @@ const Verse = props => {
     const [verse, setVerse] = useState([]);
     const [translation, setTranslation] = useState("");
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    // const [error, setError] = useState(false);
 
 
     const clickHandler = () => {
@@ -23,7 +23,7 @@ const Verse = props => {
             })
             .catch(error => {
                 console.log(error)
-                setError(true);
+                // setError(true);
                 setLoading(false);
             })
     }
