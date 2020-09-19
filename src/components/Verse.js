@@ -36,7 +36,7 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {error ? <div className="error-message">This fetch lacks the wisdom of Solomon...</div> : null}
+                {/*{error ? <div className="error-message">This fetch lacks the wisdom of Solomon...</div> : null}*/}
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
