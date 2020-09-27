@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
+import bible from "../assets/bible.svg";
 
 const Verse = props => {
     const [passage, setPassage] = useState([]);
@@ -43,6 +44,9 @@ const Verse = props => {
                     <h1>Too Small! Use Desktop to View Content</h1>
                     :
                     <>
+                    <div className="bible">
+                        <img src={bible} alt="a bible" />
+                    </div>
                     <div className="passage">
                         <h2>{passage}</h2>
                     </div>
