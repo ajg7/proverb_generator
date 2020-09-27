@@ -23,14 +23,11 @@ const Verse = props => {
                 setLoading(false);
             })
             .catch(error => {
-                console.dir(error)
-                setErrorObject("There is an error")
+                console.log(error.response)
                 setError(true);
                 setLoading(false);
             })
     }
-
-    console.log(errorObject)
 
     useEffect(() => {
         clickHandler()
@@ -40,7 +37,7 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {error ? <div className="error-message"><h2>{errorObject}</h2></div> : null}
+                {error ? <div className="error-message"><h2>This fetch lacks the wisdom of Solomon...</h2></div> : null}
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
