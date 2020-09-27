@@ -17,14 +17,14 @@ const Verse = props => {
         axiosWithAuth().get(`v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
             .then(response => {
                 console.log(response.data)
-                setPassage("hello");
+                setPassage(response.data.passages);
                 setVerse(response.data.query);
                 setTranslation("ESV");
                 setLoading(false);
             })
             .catch(error => {
                 console.log(error)
-                setErrorObject(error)
+                setErrorObject(error.response)
                 setError(true);
                 setLoading(false);
             })
@@ -40,7 +40,7 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {<div className="error-message">{errorObject}</div>}
+                {error ? <div className="error-message">{errorObject}</div> : null}
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
