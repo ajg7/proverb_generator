@@ -23,7 +23,7 @@ const Verse = props => {
                 setLoading(false);
             })
             .catch(error => {
-                console.log(error.response.status)
+                console.log(error)
                 setError(true);
                 setLoading(false);
             })
