@@ -24,7 +24,7 @@ const Verse = props => {
             })
             .catch(error => {
                 console.log(error)
-                setErrorObject(error.response)
+                setErrorObject("There is an error")
                 setError(true);
                 setLoading(false);
             })
