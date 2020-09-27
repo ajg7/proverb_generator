@@ -17,7 +17,7 @@ const Verse = props => {
         axiosWithAuth().get(`v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
             .then(response => {
                 console.log(response.data)
-                setPassage(response);
+                setPassage("hello");
                 setVerse(response.data.query);
                 setTranslation("ESV");
                 setLoading(false);
