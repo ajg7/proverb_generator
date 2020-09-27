@@ -38,7 +38,6 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {error ? <div className="error-message"><h2>This fetch lacks the wisdom of Solomon...</h2></div> : null}
                 {isMobile 
                     ? 
                     <h1>Too Small! Use Desktop to View Content</h1>
