@@ -17,7 +17,7 @@ const Verse = props => {
         axiosWithAuth().get(`v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
             .then(response => {
                 console.log(response.data)
-                setPassage(response.data.passages);
+                setPassage(response);
                 setVerse(response.data.query);
                 setTranslation("ESV");
                 setLoading(false);
@@ -30,6 +30,8 @@ const Verse = props => {
             })
     }
 
+    console.log(errorObject)
+
     useEffect(() => {
         clickHandler()
     }, [])
@@ -38,7 +40,7 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {error ? <div className="error-message">{errorObject}</div> : null}
+                {<div className="error-message">{errorObject}</div>}
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
