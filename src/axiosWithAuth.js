@@ -13,6 +13,7 @@ export const axiosWithAuth = () => {
         },
         headers: {
             Authorization: token 
-        }
+        },
+        baseURL: "https://api.esv.org"
     })
 }

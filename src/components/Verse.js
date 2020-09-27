@@ -14,7 +14,7 @@ const Verse = props => {
         const randomChapter = Math.round(Math.random() * (31-1));
         const randomVerse = Math.round(Math.random() * (31-1));
 
-        axiosWithAuth().get(`https://api.esv.org/v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
+        axiosWithAuth().get(`v3/passage/text?q=Proverbs+${randomChapter}:${randomVerse}`)
             .then(response => {
                 console.log(response.data)
                 setPassage(response.data.passages);
