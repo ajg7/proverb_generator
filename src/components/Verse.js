@@ -7,6 +7,7 @@ const Verse = props => {
     const [translation, setTranslation] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+    const isMobile = window.innerWidth <= 500;
 
 
     const clickHandler = () => {
@@ -32,11 +33,16 @@ const Verse = props => {
         clickHandler()
     }, [])
 
+
     return(
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
                 {error ? <div className="error-message"><h2>This fetch lacks the wisdom of Solomon...</h2></div> : null}
+                {isMobile ? 
+                    <h1>Too Small! Use Desktop to View Content</h1>
+                    :
+                <>
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
@@ -46,6 +52,8 @@ const Verse = props => {
                 <div className="random-verse-button">
                     <button onClick={clickHandler}>Random Verse!</button>
                 </div>
+                </>
+                }
             </div>
         </>
     )
