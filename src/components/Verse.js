@@ -40,7 +40,7 @@ const Verse = props => {
         <>
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
-                {error ? <div className="error-message">{errorObject}</div> : null}
+                {error ? <div className="error-message"><h2>{errorObject}</h2></div> : null}
                 <div className="passage">
                     <h2>{passage}</h2>
                 </div>
