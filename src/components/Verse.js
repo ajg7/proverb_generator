@@ -39,20 +39,21 @@ const Verse = props => {
             <div className="verse-card">
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
                 {error ? <div className="error-message"><h2>This fetch lacks the wisdom of Solomon...</h2></div> : null}
-                {isMobile ? 
+                {isMobile 
+                    ? 
                     <h1>Too Small! Use Desktop to View Content</h1>
                     :
-                <>
-                <div className="passage">
-                    <h2>{passage}</h2>
-                </div>
-                <div className="verse-title">
-                    <h2>{verse} {translation}</h2>
-                </div>
-                <div className="random-verse-button">
-                    <button onClick={clickHandler}>Random Verse!</button>
-                </div>
-                </>
+                    <>
+                    <div className="passage">
+                        <h2>{passage}</h2>
+                    </div>
+                    <div className="verse-title">
+                        <h2>{verse} {translation}</h2>
+                    </div>
+                    <div className="random-verse-button">
+                        <button onClick={clickHandler}>Random Verse!</button>
+                    </div>
+                    </>
                 }
             </div>
         </>
