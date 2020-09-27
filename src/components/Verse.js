@@ -7,7 +7,6 @@ const Verse = props => {
     const [translation, setTranslation] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [errorObject, setErrorObject] = useState({})
 
 
     const clickHandler = () => {
