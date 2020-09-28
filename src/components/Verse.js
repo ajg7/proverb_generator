@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../axiosWithAuth";
-import bible from "../assets/bible.svg";
+import bible from "../assets/bible.png";
 
 const Verse = props => {
     const [passage, setPassage] = useState([]);

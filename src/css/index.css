@@ -37,14 +37,13 @@ img {
 }
 
 .verse-card {
-    font-weight: bold;
     font-family: var(--body-font);
     font-size: 36px;
     padding: 50px;
 }
 
 .verse-title {
-    font-size: 26px;
+    font-size: 22px;
     padding: 15px;
     font-family: var(--other-font);
 }
@@ -54,13 +53,15 @@ img {
 }
 
 button {
-    background: none;
-    padding: 0.5em 3em;
-    border: 5px solid var(--secondary-color);
-    border-radius: 15px;
+    background-color: rgba(20,20,20,0.3);
+    border: none;
+    text-transform: uppercase; 
+    padding: 0.5em 1em;
+    margin-top: 1.5em;
+    border-radius: 3px;
     color: var(--secondary-color);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-family: var(--other-font);
 }
 
