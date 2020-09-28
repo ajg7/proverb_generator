@@ -41,7 +41,7 @@ const Verse = props => {
                 {loading ? <div className="loading-message">Loading Verse....</div> : null}
                 {isMobile 
                     ? 
-                    <h1>Too Small! Use Desktop to View Content</h1>
+                    <h1>Use Desktop to View Content</h1>
                     :
                     <>
                     <div className="bible">
